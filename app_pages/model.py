@@ -47,7 +47,7 @@ def app():
     temp_gold.index.freq = temp_gold.index.inferred_freq
 
     #divide into train and test
-    split_num = int(round(len(temp_gold)*0.75, 0))
+    split_num = int(round(len(temp_gold)*0.7, 0))
     train = temp_gold.iloc[:split_num]
     test = temp_gold.iloc[split_num:]
 

@@ -37,11 +37,11 @@ This project is a demonstration of forecasting, a subset of regression, which is
     -  Trend Formula: bₜ = (1 - β)bₜ₋₁ + β(lₜ - lₜ₋₁)
     -  Model Formula: yᵧ₊ₙ = lₜ + bₜ
     -  Notation: α: level smoothing constant, β: trend smoothing constant, t: observed time units, n: number of time units to forecast for
-  - Double exponential smoothing additive method forecasting formula: ŷᵧ₊ₙ = lₜ + nbₜ
+  - Double exponential smoothing additive method forecasting formula: ŷᵧ₊ₙ = lₜ + (ϕ¹ + ϕ² + ϕʰ)nbₜ
     -  Level Formula: lₜ = (1 - α)lₜ₋₁ + αx₁
     -  Trend Formula: bₜ = (1 - β)bₜ₋₁ + β(lₜ - lₜ₋₁)
     -  Model Formula: yᵧ₊ₙ = lₜ + bₜ
-    -  Notation: α: level smoothing constant, β: trend smoothing constant, t: observed time units, n: number of time units to forecast for, p: daming coefficient
+    -  Notation: α: level smoothing constant, β: trend smoothing constant, t: observed time units, n: number of time units to forecast for, ϕ: daming coefficient
   
 ## Usage
 - [app.py](https://github.com/Evan-Lehmann/ml-forecasting/blob/main/app.py)

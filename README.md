@@ -20,12 +20,29 @@ This project is a demonstration of forecasting, a subset of regression, which is
 - Dataset
   - The original dataset can be found on Kaggle, [here](https://www.kaggle.com/hemil26/gold-rates-1985-jan-2022). 
 
-## Algorithm
-- The forecasting algorithm used is Holt's Linear Trend (also called double exponential smoothing)
-  - This algorithm is an extension of single exponential smoothing (SES), which is a univariate forecasting method the produces forecasts using weighted averages from the past. As the observations get older, the weights decrease exponentially. 
-    - SES uses the parameter *smoothing constant* to determine the degree to which past observations have on forecasts. The higher the value, the more influence past observations have.
-  - Holt's Linear Trend employs two *smoothing constants* at each period, which helps it handle trends better than single exponential smoothing.
-
+## <a name="algorithm">Algorithm</a>
+- The forecasting algorithm used is Holt's Linear Method, also called double exponential smoothing.
+  - Double exponential smoothing is an extension of single exponential smoothing
+    - Single exponential smoothing (SES) is a forecasting technique used with univariate data. 
+      - SES assumes that data has no trend or seasonality/cyclicality.
+      - SES uses a weighted sum of past observations to make forecasts. As observations get older, their weights decrease exponentially. 
+      - SES's only parameter is α, which is known as the smoothing coefficient. Alpha's value is between 0 and 1, and it controls the rate at which past observations decay.
+      - SES Formula: yₜ = αxₜ + (1 - α)yₜ₋₁ 
+        - Notaion: α: smoothing factor, t: time period
+  - Double exponential smoothing differs from SES because it adds a trend component
+    - This makes double exponential smoothing appropriate when trends are present in a time series
+  - Double exponential smoothing techniques are commonly used in marketing and finance to make short-term forecast on time series with trend.
+  - Double exponential smoothing additive method forecasting formula: ŷᵧ₊ₙ = lₜ + nbₜ
+    -  Level Formula: lₜ = (1 - α)lₜ₋₁ + αx₁
+    -  Trend Formula: bₜ = (1 - β)bₜ₋₁ + β(lₜ - lₜ₋₁)
+    -  Model Formula: yᵧ₊ₙ = lₜ + bₜ
+    -  Notation: α: level smoothing constant, β: trend smoothing constant, t: observed time units, n: number of time units to forecast for
+  - Double exponential smoothing additive method forecasting formula: ŷᵧ₊ₙ = lₜ + nbₜ
+    -  Level Formula: lₜ = (1 - α)lₜ₋₁ + αx₁
+    -  Trend Formula: bₜ = (1 - β)bₜ₋₁ + β(lₜ - lₜ₋₁)
+    -  Model Formula: yᵧ₊ₙ = lₜ + bₜ
+    -  Notation: α: level smoothing constant, β: trend smoothing constant, t: observed time units, n: number of time units to forecast for, p: daming coefficient
+  
 ## Usage
 - [app.py](https://github.com/Evan-Lehmann/ml-forecasting/blob/main/app.py)
   - The web app can be launched locally by entering: 

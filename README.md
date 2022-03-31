@@ -9,7 +9,7 @@ This project is a demonstration of forecasting, a subset of regression, which is
     - [app_pages](https://github.com/Evan-Lehmann/ml-forecastingn/tree/main/app_pages) contains the different pages of the web app.  
   - Page Info
     - [model.py](https://github.com/Evan-Lehmann/ml-forecasting/blob/main/app_pages/model.py) 
-      - The page displays the original dataset, which the model was initially fitted on. The model will forecast for the selected number of months.
+      - The page displays the original dataset, which the model was initially fitted on. The model will forecast for the selected number of years.
       - The trained model file is in the repo and can be found [here](https://github.com/Evan-Lehmann/ml-forecasting/blob/main/forecast.pkl) 
       - See [Algorithm](##Algorithm) for more info on the algorithm.
     - [dashboard.py](https://github.com/Evan-Lehmann/ml-forecasting/blob/main/app_pages/dashboard.py)
@@ -65,8 +65,13 @@ This project is a demonstration of forecasting, a subset of regression, which is
  pip install -r requirements.txt
  ```
 
-## Screenshots
-
+ ## <a name="demo">Deployed Demo</a>
+ - A deployed demonstration of this app can be found at https://ml-forecasting-app.herokuapp.com/. The app was hosted using Heroku, a cloud platform used to work with applications. 
+ - Deployment Dependencies 
+    - [Procfile](https://github.com/Evan-Lehmann/ml-forecasting/blob/main/Procfile) is used to declare the commands run by the application's dynos. 
+    - [setup.sh](https://github.com/Evan-Lehmann/ml-forecasting/blob/main/setup.sh) is used to add shell commands.
+    - [.slugignore](https://github.com/Evan-Lehmann/ml-forecasting/blob/main/.slugignore) is used to remove files after code is pushed to Heroku.
+    - [runtime.txt](https://github.com/Evan-Lehmann/ml-forecasting/blob/main/runtime.txt) is used to declare the Python version used. 
  
 ## License 
 This project is licensed under the [MIT license](LICENSE).
